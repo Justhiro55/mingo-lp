@@ -182,6 +182,25 @@ section { padding-block: clamp(72px, 10vw, 136px); }
 .movie video { width: 100%; border-radius: var(--r-panel); background: var(--back); box-shadow: 0 30px 60px -30px rgba(80, 60, 50, 0.4); }
 .movie .note { margin-top: 12px; }
 
+/* ------------------------------ ためす（TestFlight） ------------------------------ */
+.try { padding-block: clamp(56px, 8vw, 104px); }
+.try-card {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(24px, 4vw, 56px);
+  padding: clamp(28px, 4vw, 56px); border-radius: var(--r-panel);
+  background: linear-gradient(120deg, color-mix(in srgb, var(--coral) 16%, var(--paper)), var(--paper) 62%);
+  box-shadow: 0 30px 60px -36px rgba(120, 60, 60, 0.45);
+}
+/* アプリアイコン：iOS のホーム画面と同じ角の丸み */
+.app-icon { width: clamp(96px, 12vw, 148px); border-radius: 22.5%; box-shadow: 0 2px 0 rgba(255, 255, 255, 0.8) inset, 0 18px 30px -14px rgba(120, 60, 60, 0.55); rotate: -4deg; }
+.try-copy h2 { font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.5rem); }
+.try-copy p { margin-top: 12px; max-width: 30em; }
+.try-copy .try-actions { margin-top: 24px; }
+.try-qr { display: grid; justify-items: center; gap: 8px; }
+.try-qr a { display: block; padding: 10px; border-radius: var(--r-card); background: #fff; border: 2px solid var(--line); }
+.try-qr img { width: 148px; height: 148px; }
+.try-qr figcaption { font-size: 0.8125rem; font-weight: 700; color: var(--soft); }
+.foot a { color: inherit; text-underline-offset: 4px; }
+
 /* ------------------------------ コンセプト ------------------------------ */
 .concept { position: relative; text-align: center; padding-bottom: clamp(200px, 26vw, 360px); overflow: hidden; }
 .concept h2 { font-size: clamp(2.2rem, 1.2rem + 4.4vw, 4.75rem); }
@@ -220,6 +239,10 @@ section { padding-block: clamp(72px, 10vw, 136px); }
   .map-feathers { margin-left: 0; }
   .walk-steps li { min-height: 62svh; justify-content: flex-start; padding-top: 40px; }
   .sc-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+  /* スマホで見ている人は、その場でボタンを押せる。QRは出さない */
+  .try-card { grid-template-columns: 1fr; justify-items: start; }
+  .try-qr { display: none; }
+  .try-actions .btn { text-align: center; }
 }
 
 /* 動きを減らす設定：自動の動きは止め、すぐ結果を見せる */
